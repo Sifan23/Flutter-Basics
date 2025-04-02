@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'pages/home.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -13,10 +11,27 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Poppins'),
-      home: HomePage()
-    );
+        title: "Flutter Demo",
+        theme: ThemeData(primarySwatch: Colors.blue),
+        home: const MyHomePage(title: 'Flutter Demo Home Page'));
   }
 }
 
+// Define the MyHomePage class
+class MyHomePage extends StatelessWidget {
+  final String title;
+
+  const MyHomePage({super.key, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: const Center(
+        child: Text('Hello, Flutter!'),
+      ),
+    );
+  }
+}
