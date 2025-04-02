@@ -1,3 +1,4 @@
+import 'package:fitness/pages/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,28 +11,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: "Flutter Demo",
-        theme: ThemeData(primarySwatch: Colors.blue),
-        home: const MyHomePage(title: 'Flutter Demo Home Page'));
-  }
-}
-
-// Define the MyHomePage class
-class MyHomePage extends StatelessWidget {
-  final String title;
-
-  const MyHomePage({super.key, required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: const Center(
-        child: Text('Hello, Flutter!'),
-      ),
-    );
+    return const MaterialApp(home: HomePage());
   }
 }
