@@ -55,7 +55,23 @@ class _HomePageState extends State<HomePage> {
               separatorBuilder: (context, index) => SizedBox(height: 25),
               padding: EdgeInsets.only(right: 20, left: 20),
               itemBuilder: (context, index) {
-                return Container(color: Colors.blue, height: 115);
+                return Container(
+                    height: 115,
+                    child: Row(
+                      children: [
+                        SvgPicture.asset(popularDiets[index].iconPath)
+                      ],
+                    ),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color(0xff1D1617).withOpacity(0.07),
+                              offset: Offset(0, 10),
+                              blurRadius: 40,
+                              spreadRadius: 0)
+                        ]));
               },
             )
           ]),
