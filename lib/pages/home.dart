@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 40),
           _dietSection(),
           SizedBox(height: 40),
-          Column(children: [
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Padding(
                 padding: const EdgeInsets.only(left: 20),
                 child: Text(
@@ -47,7 +47,17 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.black,
                       fontSize: 18,
                       fontWeight: FontWeight.w600),
-                ))
+                )),
+            SizedBox(height: 15),
+            ListView.separated(
+              itemCount: popularDiets.length,
+              shrinkWrap: true,
+              separatorBuilder: (context, index) => SizedBox(height: 25),
+              padding: EdgeInsets.only(right: 20, left: 20),
+              itemBuilder: (context, index) {
+                return Container(color: Colors.blue, height: 115);
+              },
+            )
           ]),
           SizedBox(height: 40)
         ],
