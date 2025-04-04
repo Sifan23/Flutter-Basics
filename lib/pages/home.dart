@@ -93,15 +93,19 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: popularDiets[index].boxIsSelected
+                            ? Colors.white
+                            : Colors.transparent,
                         borderRadius: BorderRadius.circular(15),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color(0xff1D1617).withOpacity(0.07),
-                              offset: Offset(0, 10),
-                              blurRadius: 40,
-                              spreadRadius: 0)
-                        ]));
+                        boxShadow: popularDiets[index].boxIsSelected
+                            ? [
+                                BoxShadow(
+                                    color: Color(0xff1D1617).withOpacity(0.07),
+                                    offset: Offset(0, 10),
+                                    blurRadius: 40,
+                                    spreadRadius: 0)
+                              ]
+                            : []));
               },
             )
           ]),
