@@ -56,10 +56,40 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(right: 20, left: 20),
               itemBuilder: (context, index) {
                 return Container(
-                    height: 115,
+                    height: 100,
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        SvgPicture.asset(popularDiets[index].iconPath)
+                        SvgPicture.asset(popularDiets[index].iconPath,
+                            width: 65, height: 65),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(popularDiets[index].name,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black,
+                                    fontSize: 16)),
+                            Text(
+                                popularDiets[index].level +
+                                    ' | ' +
+                                    popularDiets[index].duration +
+                                    ' | ' +
+                                    popularDiets[index].calorie,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xff786F22),
+                                    fontSize: 13))
+                          ],
+                        ),
+                        GestureDetector(
+                            onTap: () {},
+                            child: SvgPicture.asset(
+                              'assets/icons/button.svg',
+                              width: 30,
+                              height: 30,
+                            ))
                       ],
                     ),
                     decoration: BoxDecoration(
